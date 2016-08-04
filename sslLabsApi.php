@@ -12,7 +12,8 @@
 
 class sslLabsApi
 {
-	CONST API_URL = "https://api.ssllabs.com/api/v2";
+	#CONST API_URL = "https://api.ssllabs.com/api/v2";
+	CONST API_URL = "https://api.ssllabs.com/api/v2/info";//not production
 	
 	private $returnJsonObjects;
 	
