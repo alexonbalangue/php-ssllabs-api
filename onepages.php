@@ -390,14 +390,15 @@ $response = $client->analyse();
             <th class="ipaddress_col">IP Address</th>
             <th></th>
         </tr>
-        <?php foreach($response->endpoints as $endpoint) : ?>
+        <?php foreach($response->endpoints as $endpoint){ ?>
             <tr>
-                <td><div class="grade grade-<?php echo strtolower(substr($endpoint->grade,0,1)); ?>"><?php echo $endpoint->grade ?></div></td>
+				
+                <td><div class="grade grade-<?php echo strtolower(substr($endpoint->grade,0,1)); ?>"><?php echo $endpoint->grade; ?></div></td>
                 <td><?php echo $endpoint->ipAddress; ?></td>
-                <td><a target="_blank" href="https://www.ssllabs.com/ssltest/analyze.html?d=<?php echo str_replace("https://","",$site_url)?>&s=<?php echo $endpoint->ipAddress; ?>">View detailed report on Qualys SSL Labs</a></td>
+                <td><a target="_blank" href="https://www.ssllabs.com/ssltest/analyze.html?d=<?php echo str_replace("https://","",$site_url); ?>&s=<?php echo $endpoint->ipAddress; ?>">View detailed report on Qualys SSL Labs</a></td>
             </tr>
 			
-        <?php endforeach;?>
+        <?php } ?>
     </table>
 
     <div>
